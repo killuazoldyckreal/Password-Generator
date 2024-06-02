@@ -162,3 +162,50 @@ body {
 .generate-btn:hover {
     background-color: #0056b3;
 }
+
+/* Container styles */
+#container2 {
+    padding: 20px; /* Adjust the padding as needed */
+    margin: 20px;
+  }
+  
+  /* Table styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Table header styles */
+  .table th {
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Table body styles */
+  .table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Table row hover effect */
+  .table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Table icons */
+  .fa {
+    margin-right: 5px;
+  }
+  
+  /* Success icon color */
+  .has-text-success {
+    color: green;
+  }
+  
+  /* Danger icon color */
+  .has-text-danger {
+    color: red;
+  }
+  

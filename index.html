@@ -59,10 +59,51 @@
                 </ul>
             </div>
             <button class="generate-btn" id="generateButton">Generate Password</button>
-            <label class="title" id="crackTimeOutput">Estimated time for cracking it: 0.00 seconds</label>
         </div>
     </div>
-
+	<div class="container" id="container2">
+		<div id="tab-details-times" class="content">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Attack Type</th>
+						<th>Crack Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr title="Online attack on a service that rate-limits password authentication attempts.">
+						<td>Online/Throttling</td>
+						<td>
+							<i id="icon-online-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
+							<span id="time-online-slow">less than a second</span>
+						</td>
+					</tr>
+					<tr title="Online attack on a service that doesn't rate-limit, or where an attacker has outsmarted rate-limiting.">
+						<td>Online/No Throttling</td>
+						<td>
+							<i id="icon-online-fast" class="fa fa-fw has-text-success fa-check-circle"></i>
+							<span id="time-online-fast">less than a second</span>
+						</td>
+					</tr>
+					<tr title="Offline attack. Assumes multiple attackers, proper user-unique salting, and a slow hash function with moderate work factor, such as bcrypt, scrypt, or PBKDF2.">
+						<td>Offline/Slow</td>
+						<td>
+							<i id="icon-offline-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
+							<span id="time-offline-slow">less than a second</span>
+						</td>
+					</tr>
+					<tr title="Offline attack with user-unique salting but a fast hash function like SHA-1, SHA-256, or MD5. A wide range of reasonable numbers anywhere from one billion to one trillion guesses per second, depending on number of cores and machines, and ballparking at 10B/sec.">
+						<td>Offline/Fast</td>
+						<td>
+							<i id="icon-offline-fast" class="fa fa-fw has-text-danger fa-warning"></i>
+							<span id="time-offline-fast">less than a second</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
     <script src="script.js"></script>
+    <script src="zxcvbn.js"></script>
 </body>
 </html>

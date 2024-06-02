@@ -211,59 +211,52 @@ body {
 
 /* CSS for Mobile Screens */
 @media only screen and (max-width: 480px) {
-  body {
-    padding: 10px; /* Adjust padding as needed */
-  }
-
-  .container {
-    width: calc(100% - 20px); /* Adjust width as needed */
-    max-width: 400px; /* Adjust max-width as needed */
-    margin-bottom: 20px; /* Add margin to create space between containers */
-  }
-
-  .container:nth-child(2) {
-    margin-top: 20px; /* Add margin to create space between containers */
-  }
-
-  .container h2 {
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-  .wrapper {
-    margin: 1rem;
-  }
-
-  .input-box input {
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .input-box span {
-    line-height: 40px;
-  }
-
-  .pass-indicator {
-    margin-top: 0.5rem;
-  }
-
-  .pass-length {
-    margin: 1rem 0;
-  }
-
-  .generate-btn {
-    font-size: 1rem;
-    padding: 0.8rem 0;
-    margin: 0.8rem 0 1.2rem;
-  }
-
-  .pass-settings .options .option {
-    width: 100%;
-  }
-
-  .table th,
-  .table td {
-    padding: 10px;
-  }
+      /* Adjustments for mobile screens */
+    
+    /* General styles */
+    .container {
+        width: 100%; /* Adjust width to fit mobile screens */
+        border-radius: 0; /* Remove border radius */
+    }
+    
+    .container h2 {
+        font-size: 1.2rem; /* Decrease font size for headings */
+        padding: 1rem 1.5rem; /* Adjust padding */
+    }
+    
+    .wrapper {
+        margin: 1rem 1.5rem; /* Adjust margin */
+    }
+    
+    .input-box input {
+        height: 40px; /* Decrease input height */
+        font-size: 1rem; /* Decrease font size */
+    }
+    
+    .input-box span {
+        line-height: 40px; /* Adjust line height */
+    }
+    
+    .pass-indicator,
+    .pass-length,
+    .pass-settings,
+    .generate-btn {
+        margin: 1rem 0; /* Adjust margin for these elements */
+    }
+    
+    .pass-settings .options .option {
+        width: 100%; /* Set width to 100% to stack options vertically */
+    }
+    
+    /* Table adjustments */
+    .table th,
+    .table td {
+        padding: 10px; /* Adjust padding */
+    }
+    
+    /* Hide table icons on mobile */
+    .fa {
+        display: none;
+    }
 }
 

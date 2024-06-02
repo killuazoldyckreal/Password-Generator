@@ -14,9 +14,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+	height: 100vh;
 }
 
+.section {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: auto;
+}
+	
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -166,7 +173,7 @@ body {
 /* Container styles */
 #container2 {
     padding: 20px; /* Adjust the padding as needed */
-    margin: 20px;
+    margin-left: 20px;
   }
   
   /* Table styles */
@@ -211,14 +218,24 @@ body {
 
 /* CSS for Mobile Screens */
 @media only screen and (max-width: 480px) {
-      /* Adjustments for mobile screens */
-    
-    /* General styles */
+	
+	body {
+		background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+		animation: gradientAnimation 15s ease infinite;
+		display: block;
+		height: auto;
+	}
+	
     .container {
-        width: 100%; /* Adjust width to fit mobile screens */
-        border-radius: 0; /* Remove border radius */
+		width: 90%;
+		margin-top: 20px;
+		font-size: small;
     }
     
+	#container2 {
+		margin-left: 0;
+    }
+	
     .container h2 {
         font-size: 1.2rem; /* Decrease font size for headings */
         padding: 1rem 1.5rem; /* Adjust padding */

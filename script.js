@@ -209,7 +209,7 @@ async function generateCryptographicHashPassword(password, algorithm, length) {
 // Function to estimate the time to crack the password
 function updateCrackTime(password) {
     const secondsInYear = 60 * 60 * 24 * 365;
-    const guessesPerSecond = 1e9; // Assuming 1 billion guesses per second
+    const guessesPerSecond = 1e13; // Assuming 1 billion guesses per second
 
     const characterSetSize = getCharacterSetSize(password);
     const possibleCombinations = Math.pow(characterSetSize, password.length);

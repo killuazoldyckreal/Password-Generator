@@ -230,7 +230,18 @@ function updateCrackTime(password) {
         timeToCrack = `${(secondsToCrack / secondsInYear).toFixed(2)} years`;
     }
 
+    if (timeToCrack.length > 5) {
+        timeToCrack = convertToScientificNotation(timeToCrack);
+    }
+
     crackTimeOutput.innerText = `Estimated time for cracking it: ${timeToCrack}`;
+}
+
+function convertToScientificNotation(numberStr) {
+    const num = parseFloat(numberStr);
+    const exponent = Math.floor(Math.log10(num));
+    const mantissa = (num / Math.pow(10, exponent)).toFixed(2);
+    return `${mantissa} x 10<sup>${exponent}</sup>`;
 }
 
 function getCharacterSetSize(password) {

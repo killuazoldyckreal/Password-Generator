@@ -6,6 +6,7 @@ const passwordLengthSpan = document.getElementById('passwordLength');
 const passIndicator = document.querySelector(".pass-indicator");
 const copyIcon = document.getElementById('copyIcon');
 const generateButton = document.getElementById('generateButton');
+const crackTimeOutput = document.getElementById('crackTimeOutput');
 
 copyIcon.addEventListener('click', () => {
     navigator.clipboard.writeText(passwordOutput.value);
@@ -58,6 +59,7 @@ generateButton.addEventListener('click', async () => {
     }
 
     passwordOutput.value = password;
+    updateCrackTime(password);
 });
 
 function generateRandomPassword(length) {
@@ -202,6 +204,48 @@ async function generateCryptographicHashPassword(password, algorithm, length) {
     const truncatedPassword = hashedPasswordHex.slice(0, length);
 
     return truncatedPassword;
+}
+
+// Function to estimate the time to crack the password
+function updateCrackTime(password) {
+    const secondsInYear = 60 * 60 * 24 * 365;
+    const guessesPerSecond = 1e9; // Assuming 1 billion guesses per second
+
+    const characterSetSize = getCharacterSetSize(password);
+    const possibleCombinations = Math.pow(characterSetSize, password.length);
+    const secondsToCrack = possibleCombinations / guessesPerSecond;
+
+    let timeToCrack;
+    if (secondsToCrack < 1) {
+        timeToCrack = `${secondsToCrack.toFixed(2)} seconds`;
+    } else if (secondsToCrack < 60) {
+        timeToCrack = `${secondsToCrack.toFixed(2)} seconds`;
+    } else if (secondsToCrack < 3600) {
+        timeToCrack = `${(secondsToCrack / 60).toFixed(2)} minutes`;
+    } else if (secondsToCrack < 86400) {
+        timeToCrack = `${(secondsToCrack / 3600).toFixed(2)} hours`;
+    } else if (secondsToCrack < secondsInYear) {
+        timeToCrack = `${(secondsToCrack / 86400).toFixed(2)} days`;
+    } else {
+        timeToCrack = `${(secondsToCrack / secondsInYear).toFixed(2)} years`;
+    }
+
+    crackTimeOutput.innerText = `Estimated time for cracking it: ${timeToCrack}`;
+}
+
+function getCharacterSetSize(password) {
+    const hasLowercase = /[a-z]/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasDigits = /\d/.test(password);
+    const hasSpecialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+
+    let size = 0;
+    if (hasLowercase) size += 26;
+    if (hasUppercase) size += 26;
+    if (hasDigits) size += 10;
+    if (hasSpecialChars) size += 32; // Assuming 32 possible special characters
+
+    return size;
 }
 
 const updatePassIndicator = () => {

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,20 +14,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-	height: 100vh;
+    height: 100vh;
 }
 
 .section {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
 }
-	
+
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -37,7 +45,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.container h2{
+.container h2 {
     font-weight: 600;
     font-size: 1.31rem;
     padding: 1rem 1.75rem;
@@ -45,11 +53,11 @@ body {
     color: #333;
 }
 
-.wrapper{
+.wrapper {
     margin: 1.25rem 1.75rem;
 }
 
-.wrapper .input-box{
+.wrapper .input-box {
     position: relative;
 }
 
@@ -66,7 +74,7 @@ body {
     padding: 0 2.85rem 0 1rem;
 }
 
-.input-box span{
+.input-box span {
     position: absolute;
     right: 13px;
     cursor: pointer;
@@ -74,11 +82,11 @@ body {
     color: #707070;
 }
 
-.input-box span:hover{
+.input-box span:hover {
     color: #43A047 !important;
 }
 
-.wrapper .pass-indicator{
+.wrapper .pass-indicator {
     width: 100%;
     height: 4px;
     position: relative;
@@ -86,7 +94,7 @@ body {
     border-radius: 25px;
 }
 
-.pass-indicator::before{
+.pass-indicator::before {
     position: absolute;
     content: "";
     height: 100%;
@@ -95,57 +103,57 @@ body {
     transition: width 0.3s ease;
 }
 
-.pass-indicator#weak::before{
+.pass-indicator#weak::before {
     width: 20%;
     background: #e64a4a;
 }
 
-.pass-indicator#medium::before{
+.pass-indicator#medium::before {
     width: 50%;
     background: #f1c80b;
 }
 
-.pass-indicator#strong::before{
+.pass-indicator#strong::before {
     width: 100%;
     background: #43A047;
 }
 
 
-.wrapper .pass-length{
+.wrapper .pass-length {
     margin: 1.56rem 0 1.25rem;
 }
 
-.pass-length .details{
+.pass-length .details {
     display: flex;
     justify-content: space-between;
 }
 
-.pass-length input{
+.pass-length input {
     width: 100%;
     height: 14px;
 }
 
-.pass-settings .options{
+.pass-settings .options {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
     margin-top: 1rem;
 }
 
-.pass-settings .options .option{
+.pass-settings .options .option {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
     width: calc(100% / 2);
 }
 
-.options .option input{
+.options .option input {
     height: 16px;
     width: 16px;
     cursor: pointer;
 }
 
-.options .option label{
+.options .option label {
     cursor: pointer;
     color: #4f4f4f;
     padding-left: 0.63rem;
@@ -172,108 +180,118 @@ body {
 
 /* Container styles */
 #container2 {
-    padding: 20px; /* Adjust the padding as needed */
+    padding: 20px;
+    /* Adjust the padding as needed */
     margin-left: 20px;
-  }
-  
-  /* Table styles */
-  .table {
+}
+
+/* Table styles */
+.table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-  }
-  
-  /* Table header styles */
-  .table th {
+}
+
+/* Table header styles */
+.table th {
     font-weight: bold;
     text-align: left;
     border-bottom: 2px solid #ddd;
-  }
-  
-  /* Table body styles */
-  .table td {
+}
+
+/* Table body styles */
+.table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-  }
-  
-  /* Table row hover effect */
-  .table tbody tr:hover {
+}
+
+/* Table row hover effect */
+.table tbody tr:hover {
     background-color: #f5f5f5;
-  }
-  
-  /* Table icons */
-  .fa {
+}
+
+/* Table icons */
+.fa {
     margin-right: 5px;
-  }
-  
-  /* Success icon color */
-  .has-text-success {
+}
+
+/* Success icon color */
+.has-text-success {
     color: green;
-  }
-  
-  /* Danger icon color */
-  .has-text-danger {
+}
+
+/* Danger icon color */
+.has-text-danger {
     color: red;
-  }
+}
 
 /* CSS for Mobile Screens */
 @media only screen and (max-width: 480px) {
-	
-	body {
-		background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-		animation: gradientAnimation 15s ease infinite;
-		display: block;
-		height: auto;
-	}
-	
+
+    body {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+        animation: gradientAnimation 15s ease infinite;
+        display: block;
+        height: auto;
+    }
+
     .container {
-		width: 90%;
-		margin-top: 20px;
-		font-size: small;
+        width: 90%;
+        margin-top: 20px;
+        font-size: small;
     }
-    
-	#container2 {
-		margin-left: 0;
+
+    #container2 {
+        margin-left: 0;
+        margin-bottom: 20px;
     }
-	
+
     .container h2 {
-        font-size: 1.2rem; /* Decrease font size for headings */
-        padding: 1rem 1.5rem; /* Adjust padding */
+        font-size: 1.2rem;
+        /* Decrease font size for headings */
+        padding: 1rem 1.5rem;
+        /* Adjust padding */
     }
-    
+
     .wrapper {
-        margin: 1rem 1.5rem; /* Adjust margin */
+        margin: 1rem 1.5rem;
+        /* Adjust margin */
     }
-    
+
     .input-box input {
-        height: 40px; /* Decrease input height */
-        font-size: 1rem; /* Decrease font size */
+        height: 40px;
+        /* Decrease input height */
+        font-size: 1rem;
+        /* Decrease font size */
     }
-    
+
     .input-box span {
-        line-height: 40px; /* Adjust line height */
+        line-height: 40px;
+        /* Adjust line height */
     }
-    
+
     .pass-indicator,
     .pass-length,
     .pass-settings,
     .generate-btn {
-        margin: 1rem 0; /* Adjust margin for these elements */
+        margin: 1rem 0;
+        /* Adjust margin for these elements */
     }
-    
+
     .pass-settings .options .option {
-        width: 100%; /* Set width to 100% to stack options vertically */
+        width: 100%;
+        /* Set width to 100% to stack options vertically */
     }
-    
+
     /* Table adjustments */
     .table th,
     .table td {
-        padding: 10px; /* Adjust padding */
+        padding: 10px;
+        /* Adjust padding */
     }
-    
+
     /* Hide table icons on mobile */
     .fa {
         display: none;
     }
 }
-

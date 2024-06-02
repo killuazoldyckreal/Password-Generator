@@ -18,89 +18,93 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>Generate Customized Password</h2>
-        <div class="wrapper">
-            <div class="input-box" id="inputboxelement">
-                <input type="text" id="passwordOutput" disabled>
-                <span class="material-symbols-rounded" id="copyIcon">copy_all</span>
-            </div>
-            <div class="pass-indicator" id="medium"></div>
-            <div class="pass-length">
-                <div class="details">
-                    <label class="title">Password Length</label>
-                    <span id="passwordLength">15</span>
-                </div>
-                <input type="range" id="lengthSlider" min="1" max="30" value="15" step="1">
-            </div>
-            <div class="pass-settings">
-                <label class="title">Password Options</label>
-                <ul class="options">
-                    <li class="option">
-                        <input type="radio" id="randompass" name="passwordOption">
-                        <label for="randompass">Simple Password</label>
-                    </li>
-                    <li class="option">
-                        <input type="radio" id="entropy" name="passwordOption">
-                        <label for="entropy">Complex Password</label>
-                    </li>
-                    <li class="option">
-                        <input type="radio" id="passphrases" name="passwordOption">
-                        <label for="passphrases">Passphrases</label>
-                    </li>
-                    <li class="option">
-                        <input type="radio" id="patternpass" name="passwordOption">
-                        <label for="patternpass">Pattern-Based</label>
-                    </li>
-                    <li class="option">
-                        <input type="radio" id="cryptographic" name="passwordOption">
-                        <label for="cryptographic">Cryptographic Hash</label>
-                    </li>
-                </ul>
-            </div>
-            <button class="generate-btn" id="generateButton">Generate Password</button>
-        </div>
-    </div>
-	<div class="container" id="container2">
-		<div id="tab-details-times" class="content">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Attack Type</th>
-						<th>Crack Time</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr title="Online attack on a service that rate-limits password authentication attempts.">
-						<td>Online/Throttling</td>
-						<td>
-							<i id="icon-online-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
-							<span id="time-online-slow">less than a second</span>
-						</td>
-					</tr>
-					<tr title="Online attack on a service that doesn't rate-limit, or where an attacker has outsmarted rate-limiting.">
-						<td>Online/No Throttling</td>
-						<td>
-							<i id="icon-online-fast" class="fa fa-fw has-text-success fa-check-circle"></i>
-							<span id="time-online-fast">less than a second</span>
-						</td>
-					</tr>
-					<tr title="Offline attack. Assumes multiple attackers, proper user-unique salting, and a slow hash function with moderate work factor, such as bcrypt, scrypt, or PBKDF2.">
-						<td>Offline/Slow</td>
-						<td>
-							<i id="icon-offline-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
-							<span id="time-offline-slow">less than a second</span>
-						</td>
-					</tr>
-					<tr title="Offline attack with user-unique salting but a fast hash function like SHA-1, SHA-256, or MD5. A wide range of reasonable numbers anywhere from one billion to one trillion guesses per second, depending on number of cores and machines, and ballparking at 10B/sec.">
-						<td>Offline/Fast</td>
-						<td>
-							<i id="icon-offline-fast" class="fa fa-fw has-text-danger fa-warning"></i>
-							<span id="time-offline-fast">less than a second</span>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+    <div class = "section" id= "section1">
+		<div class="container">
+			<h2>Generate Customized Password</h2>
+			<div class="wrapper">
+				<div class="input-box" id="inputboxelement">
+					<input type="text" id="passwordOutput" disabled>
+					<span class="material-symbols-rounded" id="copyIcon">copy_all</span>
+				</div>
+				<div class="pass-indicator" id="medium"></div>
+				<div class="pass-length">
+					<div class="details">
+						<label class="title">Password Length</label>
+						<span id="passwordLength">15</span>
+					</div>
+					<input type="range" id="lengthSlider" min="1" max="30" value="15" step="1">
+				</div>
+				<div class="pass-settings">
+					<label class="title">Password Options</label>
+					<ul class="options">
+						<li class="option">
+							<input type="radio" id="randompass" name="passwordOption">
+							<label for="randompass">Simple Password</label>
+						</li>
+						<li class="option">
+							<input type="radio" id="entropy" name="passwordOption">
+							<label for="entropy">Complex Password</label>
+						</li>
+						<li class="option">
+							<input type="radio" id="passphrases" name="passwordOption">
+							<label for="passphrases">Passphrases</label>
+						</li>
+						<li class="option">
+							<input type="radio" id="patternpass" name="passwordOption">
+							<label for="patternpass">Pattern-Based</label>
+						</li>
+						<li class="option">
+							<input type="radio" id="cryptographic" name="passwordOption">
+							<label for="cryptographic">Cryptographic Hash</label>
+						</li>
+					</ul>
+				</div>
+				<button class="generate-btn" id="generateButton">Generate Password</button>
+			</div>
+		</div>
+	</div>
+    <div class = "section" id= "section1">
+		<div class="container" id="container2">
+			<div id="tab-details-times" class="content">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Attack Type</th>
+							<th>Crack Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr title="Online attack on a service that rate-limits password authentication attempts.">
+							<td>Online/Throttling</td>
+							<td>
+								<i id="icon-online-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
+								<span id="time-online-slow">less than a second</span>
+							</td>
+						</tr>
+						<tr title="Online attack on a service that doesn't rate-limit, or where an attacker has outsmarted rate-limiting.">
+							<td>Online/No Throttling</td>
+							<td>
+								<i id="icon-online-fast" class="fa fa-fw has-text-success fa-check-circle"></i>
+								<span id="time-online-fast">less than a second</span>
+							</td>
+						</tr>
+						<tr title="Offline attack. Assumes multiple attackers, proper user-unique salting, and a slow hash function with moderate work factor, such as bcrypt, scrypt, or PBKDF2.">
+							<td>Offline/Slow</td>
+							<td>
+								<i id="icon-offline-slow" class="fa fa-fw has-text-success fa-check-circle"></i>
+								<span id="time-offline-slow">less than a second</span>
+							</td>
+						</tr>
+						<tr title="Offline attack with user-unique salting but a fast hash function like SHA-1, SHA-256, or MD5. A wide range of reasonable numbers anywhere from one billion to one trillion guesses per second, depending on number of cores and machines, and ballparking at 10B/sec.">
+							<td>Offline/Fast</td>
+							<td>
+								<i id="icon-offline-fast" class="fa fa-fw has-text-danger fa-warning"></i>
+								<span id="time-offline-fast">less than a second</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
     <script src="script.js"></script>

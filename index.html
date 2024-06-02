@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Password Craft</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Generate Customized Password</h2>
+        <div class="wrapper">
+            <div class="input-box" id="inputboxelement">
+                <input type="text" id="passwordOutput" disabled>
+                <span class="material-symbols-rounded" id="copyIcon">copy_all</span>
+            </div>
+            <div class="pass-indicator" id="medium"></div>
+            <div class="pass-length">
+                <div class="details">
+                    <label class="title">Password Length</label>
+                    <span id="passwordLength">15</span>
+                </div>
+                <input type="range" id="lengthSlider" min="1" max="30" value="15" step="1">
+            </div>
+            <div class="pass-settings">
+                <label class="title">Password Options</label>
+                <ul class="options">
+                    <li class="option">
+                        <input type="radio" id="randompass" name="passwordOption">
+                        <label for="randompass">Simple Password</label>
+                    </li>
+                    <li class="option">
+                        <input type="radio" id="entropy" name="passwordOption">
+                        <label for="entropy">Complex Password</label>
+                    </li>
+                    <li class="option">
+                        <input type="radio" id="passphrases" name="passwordOption">
+                        <label for="passphrases">Passphrases</label>
+                    </li>
+                    <li class="option">
+                        <input type="radio" id="patternpass" name="passwordOption">
+                        <label for="patternpass">Pattern-Based</label>
+                    </li>
+                    <li class="option">
+                        <input type="radio" id="cryptographic" name="passwordOption">
+                        <label for="cryptographic">Cryptographic Hash</label>
+                    </li>
+                </ul>
+            </div>
+            <button class="generate-btn" id="generateButton">Generate Password</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

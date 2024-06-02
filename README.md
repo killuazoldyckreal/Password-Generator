@@ -2,6 +2,9 @@
 
 This repository contains a simple web-based password generator tool built using HTML, CSS, and JavaScript. It allows users to generate customized passwords with various options such as length, type, and strength indicators.
 
+## Demo
+Visit Website: [Here](https://passwordcraft.netlify.app)
+
 ## Features
 
 - **Customizable Password Generation**: Users can specify the length of the password and choose from different generation methods, including random passwords, passphrases, pattern-based passwords, entropy-based passwords, cryptographic hash passwords, and quantum random number passwords.

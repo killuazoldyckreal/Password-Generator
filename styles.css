@@ -216,14 +216,18 @@ body {
   }
 
   .container {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: none;
+    width: calc(100% - 20px); /* Adjust width as needed */
+    max-width: 400px; /* Adjust max-width as needed */
+    margin-bottom: 20px; /* Add margin to create space between containers */
+  }
+
+  .container:nth-child(2) {
+    margin-top: 20px; /* Add margin to create space between containers */
   }
 
   .container h2 {
     font-size: 1.2rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   .wrapper {
@@ -262,3 +266,4 @@ body {
     padding: 10px;
   }
 }
+
